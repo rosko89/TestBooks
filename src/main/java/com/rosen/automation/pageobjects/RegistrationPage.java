@@ -4,16 +4,20 @@ import org.openqa.selenium.WebDriver;
 
 import com.rosen.automation.properties.PropertiesCache;
 
-public class HomePage extends CommonPageTemplate {
-	public HomePage(WebDriver driver) {
-		super(driver);
-		super.driver.get(PropertiesCache.getInstance().getProperty(
-				"homepage.url"));
-	}
+public class RegistrationPage extends CommonPageTemplate {
 
-	public HomePage(Browsers browser) {
+	public RegistrationPage(Browsers browser) {
 		super(browser);
 		super.driver.get(PropertiesCache.getInstance().getProperty(
-				"homepage.url"));
+				"registration.url"));
+
 	}
+
+	public RegistrationPage(WebDriver driver) {
+		super(driver);
+		super.driver.get(PropertiesCache.getInstance().getProperty(
+				"registration.url"));
+
+	}
+
 }

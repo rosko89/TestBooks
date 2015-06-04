@@ -10,6 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import com.rosen.automation.properties.PropertiesCache;
+
 // This checks the common functionalities of all the pages. In our case - the header and the footer, because they occur at all the pages.
 public abstract class CommonPageTemplate {
 	protected WebDriver driver;
@@ -41,9 +43,23 @@ public abstract class CommonPageTemplate {
 	}
 
 	public HomePage navigateToHomePage() {
-		this.driver.findElement(By.id("")).click();// да допиша
+		this.driver.findElement(
+				By.id(PropertiesCache.getInstance().getProperty(
+						"id.header.menu.homepage.link"))).click();
 		return new HomePage(this.driver);
 	}
 
-	// da dobavq getter-i za elementite na header-a i footer-a
+	public RegistrationPage navigateToRegistrationPage() {
+		this.driver.findElement(
+				By.id(PropertiesCache.getInstance().getProperty(
+						"id.header.menu.registration.link"))).click();
+		return new RegistrationPage(this.driver);
+	}
+
+	public ShoppingCartPage navigateToShoppingCartPage() {
+		this.driver.findElement(
+				By.id(PropertiesCache.getInstance().getProperty(
+						"id.header.menu.shop.link"))).click();
+		return new ShoppingCartPage(this.driver);
+	}
 }

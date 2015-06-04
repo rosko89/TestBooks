@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -15,15 +16,13 @@ import com.rosen.automation.properties.PropertiesCache;
 public class StartTest {
 
 	public static void main(String[] args) throws MalformedURLException {
-		//PropertiesCache read=new PropertiesCache();
+		DesiredCapabilities capability = DesiredCapabilities.chrome();
+		WebDriver driver = new RemoteWebDriver(new URL(
+				"http://localhost:4444/wd/hub"), capability);
+		HomePage home = new HomePage(driver);
+		home.navigateToHomePage();
+		home.navigateToRegistrationPage();
 		
-		//PropertiesCache prop = PropertiesCache.getInstance();
-		//System.out.println(prop.getProperty(""));
-		//HomePage homePage=new HomePage(Browsers.SAFARI);
-		DesiredCapabilities capability = DesiredCapabilities.firefox();
-		System.out.println(capability.getCapability(""));
-		//WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
-		//driver.get("http://www.gol.bg");
 	}
 
 }
