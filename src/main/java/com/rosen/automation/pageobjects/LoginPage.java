@@ -14,4 +14,24 @@ public class LoginPage extends CommonPageTemplate{
 		// TODO Auto-generated constructor stub
 	}
 
+	public void enterEmail(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String getLoginAlertMessage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void enterPassword(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void submitLogin() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

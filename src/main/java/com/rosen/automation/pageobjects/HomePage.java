@@ -16,4 +16,10 @@ public class HomePage extends CommonPageTemplate {
 		super.driver.get(PropertiesCache.getInstance().getProperty(
 				"homepage.url"));
 	}
+	
+	public LoginPage openLoginPage()
+	{
+		// to think if it's probably better to add this method in the abstract class
+		return new LoginPage(this.driver);
+	}
 }
