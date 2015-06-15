@@ -18,7 +18,7 @@ public class StartTest {
 	public static void main(String[] args) throws MalformedURLException {
 		DesiredCapabilities capability = DesiredCapabilities.chrome();
 		WebDriver driver = new RemoteWebDriver(new URL(
-				"http://localhost:4444/wd/hub"), capability);
+				"http://192.168.10.147:4444/wd/hub"), capability);
 		HomePage home = new HomePage(driver);
 		home.navigateToHomePage();
 		home.navigateToRegistrationPage();
